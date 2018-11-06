@@ -16,7 +16,7 @@ const route: Routes = [
     path: "",
     component: HomeComponent,
     children: [
-      { path: "hotstream", component: HomeComponent }
+      { path: "hot", component: CardStreamComponent }
     ]
   }
 ];
