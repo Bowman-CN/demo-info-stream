@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 //3rd parties
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,8 +34,10 @@ const route: Routes = [
     RouterModule.forRoot(route),
     BrowserAnimationsModule,
     MatCardModule,
+    HttpClientModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,26 +1,43 @@
-<mat-card class="s-card  ">
-  <mat-card-header>
-    <!-- <div mat-card-avatar class="example-header-image"></div> -->
-    <!-- <mat-card-title>News Feed</mat-card-title> -->
-    <mat-card-subtitle>News Feed <small>by @Bowman</small> </mat-card-subtitle>
-    <!-- <mat-card-subtitle> <small>@14:44 Oct-25</small> </mat-card-subtitle> -->
-  </mat-card-header>
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-  <div class="d-flex flex-row flex-nowrap ">
-    <mat-card-content>
-      <div class="d-flex flex-row flex-nowrap">
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-        <div class="card-bk-img"></div>
-      </div>
-    </mat-card-content>
-  </div>
+<ng-template ngFor let-item [ngForOf]="hotEntires" let-i="index">
+  <mat-card style="margin-top:.5rem; margin-bottom:.5rem;">
+    <div class="col-layout">
+      <div class="content">
+        <mat-card-header class="">
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <!-- <mat-card-title>News Feed</mat-card-title> -->
+          <!-- <p class="mat-card-header-text d-flex flex-row justify-conent-between">
+            <span>{{item.author}}</span>
+            <span>@ {{item.infoTimestamp.toString()}}</span>
+          </p> -->
+          <mat-card-subtitle> {{item.author}} </mat-card-subtitle>
+          <mat-card-subtitle> <small>@ {{item.infoTimestamp.toString()}}</small></mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
 
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+        <div class="d-flex flex-row flex-nowrap ">
+          <mat-card-content>
+            <div class="d-flex flex-row flex-nowrap">
+              <a class="info-b" href="{{item.infoLink}}" target="blank">
+                <p>
+                  {{item.infoBody}}
+                </p>
+              </a>
+              <div class="card-bk-img"></div>
+            </div>
+          </mat-card-content>
+        </div>
+
+      </div>
+      <div class="img-sec">
+        <img src="data:image/JPEG;base64,{{item.image}}" alt="card image">
+      </div>
+    </div>
+
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+
+  </mat-card>
+</ng-template>
+<p><button mat-raised-button (click)="loadHotData(currentPage+1)" color="accent">Accent</button></p>
