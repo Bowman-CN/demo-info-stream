@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardStreamComponent } from "./card-stream/card-stream.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const route: Routes = [
   {
@@ -37,7 +39,8 @@ const route: Routes = [
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

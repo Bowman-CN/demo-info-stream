@@ -2,16 +2,20 @@
   <mat-card style="margin-top:.5rem; margin-bottom:.5rem;">
     <div class="col-layout">
       <div class="content">
-        <mat-card-header class="">
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <!-- <mat-card-title>News Feed</mat-card-title> -->
-          <!-- <p class="mat-card-header-text d-flex flex-row justify-conent-between">
-            <span>{{item.author}}</span>
-            <span>@ {{item.infoTimestamp.toString()}}</span>
+        <p class="d-flex flex-row justify-content-between text-muted px-3" style="font-size:0.8rem;">
+          <span style="display:inline-block">{{item.author}}</span>
+          <span style="display:inline-block">@ {{formatDate(item.infoTimestamp)}}</span>
+        </p>
+        <!-- <mat-card-header class=""> -->
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <!-- <mat-card-title>News Feed</mat-card-title> -->
+        <!-- <p class="d-flex flex-row justify-content-between text-muted">
+            <span style="display:inline-block">{{item.author}}</span>
+            <span style="display:inline-block">@ {{item.infoTimestamp.toString()}}</span>
           </p> -->
-          <mat-card-subtitle> {{item.author}} </mat-card-subtitle>
-          <mat-card-subtitle> <small>@ {{item.infoTimestamp.toString()}}</small></mat-card-subtitle>
-        </mat-card-header>
+        <!-- <mat-card-subtitle> {{item.author}} </mat-card-subtitle>
+          <mat-card-subtitle> <small>@ {{item.infoTimestamp.toString()}}</small></mat-card-subtitle> -->
+        <!-- </mat-card-header> -->
         <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
 
         <div class="d-flex flex-row flex-nowrap ">

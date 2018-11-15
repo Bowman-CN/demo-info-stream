@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { InfoService } from "../services/info.service";
 import { InfoEntry } from "../models/info-entry.model";
 import { PageableResponse } from "../models/pageableresponse.model";
+import * as moment from "moment";
 
 @Component({
   selector: 'app-card-stream',
@@ -45,9 +46,13 @@ export class CardStreamComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 1)) {
       setTimeout(() => {
         this.loadHotData(this.currentPage + 1);
-      }, 2000);
+      }, 1500);
 
     }
+  }
+
+  formatDate(date: Date): string {
+    return moment(date).format('HH:mm DD,MMM');
   }
 
 }

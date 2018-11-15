@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  CommonAPI: "http://localhost:9000/apis"
+  CommonAPI: "https://localhost/apis/"
 };
 
 /*
