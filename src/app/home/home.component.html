@@ -2,7 +2,13 @@
   <div class="row topbar">
     <mat-toolbar color="primary">
       <mat-toolbar-row class="head-container">
-        <span>Your Feeds</span>
+        <button class="header-text" mat-button [matMenuTriggerFor]="menu">Paperboy</button>
+        <mat-menu #menu="matMenu">
+          <a class="menu-a" [routerLink]="['/hot']" routerLinkActive="router-link-active" mat-menu-item>Front Page</a>
+          <a class="menu-a" [routerLink]="['/prefs']" routerLinkActive="router-link-active" mat-menu-item>Preferences</a>
+          <!-- <button mat-menu-item></button> -->
+        </mat-menu>
+        <!-- <span>Your Feeds</span> -->
         <section>
           <!-- <mat-slide-toggle style="font-size:1rem" (change)="layoutChange($event)" class="example-margin"
             [labelPosition]="'before'" [color]="'accent'" [checked]="false" [disabled]="false">
@@ -14,11 +20,11 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-  <div class="d-flex flex-row flex-nowrap justify-content-center main-content">
-    <div class="cards">
-      <router-outlet></router-outlet>
-      <!-- <app-card-stream></app-card-stream> -->
-    </div>
+  <div class=" main-content">
+
+    <router-outlet></router-outlet>
+    <!-- <app-card-stream></app-card-stream> -->
+
   </div>
 
 </div>

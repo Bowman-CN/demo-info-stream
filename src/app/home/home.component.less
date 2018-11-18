@@ -1,38 +1,14 @@
 @import "variables";
+.header-text{
+    font-size: 2rem;
+}
 .main-content {
     height: 100%;
     padding-top: 3rem;
-    @media( min-width: @screen-l) {
-        .cards {
-            width: 90%;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-    }
-    @media( min-width: @screen-xl) {
-        .cards {
-            width: 80%;
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-    }
-    @media( min-width: @screen-md) {
-        .cards {
-            width: 80%;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-    }
-    @media( min-width:@screen-sm) {
-        .cards {
-            width: 100%;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    }
+    
 }
 
-.app-bar{
+.app-bar {
     position: absolute;
     top: 56px;
     bottom: 0;
@@ -54,4 +30,9 @@
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+.menu-a:hover {
+    text-decoration: none;
+    color: inherit;
 }

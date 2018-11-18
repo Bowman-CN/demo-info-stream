@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { InfoService } from "../services/info.service";
-import { InfoEntry } from "../models/info-entry.model";
-import { PageableResponse } from "../models/pageableresponse.model";
+import { InfoService } from "../../services/info.service";
+import { InfoEntry } from "../../models/info-entry.model";
+import { PageableResponse } from "../../models/pageableresponse.model";
 import * as moment from "moment";
 
 @Component({
@@ -10,6 +10,7 @@ import * as moment from "moment";
   styleUrls: ['./card-stream.component.less']
 })
 export class CardStreamComponent implements OnInit {
+  loadProgress: boolean = false;
   hotEntires: Array<InfoEntry> = new Array<InfoEntry>();
   currentPage: number = 0;
   pageSize: number = 5;
@@ -30,7 +31,7 @@ export class CardStreamComponent implements OnInit {
           this.currentPage = res.number;
         }
         if (!this.pageResponse.empty) {
-
+          this.loadProgress = false;
           this.hotEntires = this.hotEntires.concat(res.content);
         }
       });
@@ -44,6 +45,7 @@ export class CardStreamComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
     if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 1)) {
+      this.loadProgress = true;
       setTimeout(() => {
         this.loadHotData(this.currentPage + 1);
       }, 1500);

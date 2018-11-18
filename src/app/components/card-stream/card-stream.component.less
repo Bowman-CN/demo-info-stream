@@ -28,7 +28,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     .content {
-        flex-grow: .7;
+        width: 80%;
         padding-right: 1rem;
         .info-b {
             color: black;
@@ -38,7 +38,7 @@
         }
     }
     .img-sec {
-        flex-grow: .3;
+        width: 20%;
         .card-img;
     }
 }
@@ -65,10 +65,10 @@
 
 .row-layout {
     @media (max-width: @screen-sm) {
-        .row-card;
+        .col-card;
     }
     @media (min-width:(@screen-sm+1px)) {
-        .col-card;
+        .row-card;
     }
     a {
         text-decoration: none;
@@ -78,6 +78,7 @@
     }
 }
 
+// seems not being used:col-layout
 .col-layout {
     .col-card;
     a {
@@ -86,4 +87,23 @@
     a:visited {
         text-decoration: none;
     }
+}
+
+.cols {
+    display: flex;
+    height: 92%;
+    flex-direction: row;
+    @media( max-width: @screen-l) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        .mat-card {
+            display: inline-block;
+            width: 300px;
+        }
+    }
+    @media( max-width: @screen-xl) {}
+    @media( max-width: @screen-md) {}
+    @media( max-width:@screen-sm) {}
 }

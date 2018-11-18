@@ -4,6 +4,7 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     background-color: rgba(240, 234, 234, 0.5);
 }
 
@@ -11,6 +12,48 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-// @media (@screen_l) {
 
+// @media (@screen_l) {
 // }
+button:focus {
+    outline: none !important;
+}
+
+.body-content {
+    width: 75%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto;
+}
+
+@media( max-width: @screen-l) {
+    .body-content {
+        width: 80%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media( max-width: @screen-xl) {
+    .body-content {
+        width: 85%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media( max-width: @screen-md) {
+    .body-content {
+        width: 95%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media( max-width:@screen-sm) {
+    .body-content {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

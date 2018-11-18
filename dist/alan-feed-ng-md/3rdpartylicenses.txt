@@ -428,12 +428,16 @@ THE SOFTWARE.
 
 @angular/material/toolbar
 
-@angular/material/card
-
 @angular/animations
 MIT
 
 @angular/material/button
+
+@angular/material/menu
+
+@angular/material/card
+
+@angular/material/progress-bar
 
 @angular/service-worker
 MIT
