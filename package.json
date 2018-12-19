@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href /",
-    "local-sw":"ng build --prod --base-href /",
+    "local-sw": "ng build --prod --base-href /",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "local-server": "http-server dist/alan-feed-ng-md -c-l --gzip --S -C ~/Documents/local-dependencies/keys/node_http_server/cert.pem -K ~/Documents/local-dependencies/keys/node_http_server/key.pem"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +26,13 @@
     "@angular/pwa": "^0.10.5",
     "@angular/router": "^7.0.3",
     "@angular/service-worker": "^7.0.3",
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "i": "^0.3.6",
+    "npm": "^6.4.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

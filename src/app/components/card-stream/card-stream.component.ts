@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { InfoService } from "../../services/info.service";
 import { InfoEntry } from "../../models/info-entry.model";
 import { PageableResponse } from "../../models/pageableresponse.model";
+import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import * as moment from "moment";
 
 @Component({
@@ -15,6 +16,8 @@ export class CardStreamComponent implements OnInit {
   currentPage: number = 0;
   pageSize: number = 5;
   pageResponse: PageableResponse<InfoEntry> = new PageableResponse<InfoEntry>();
+  leftArr = faChevronCircleLeft;
+  goTopBtn: boolean = false;
 
   constructor(private infoService: InfoService) { }
 
@@ -25,6 +28,9 @@ export class CardStreamComponent implements OnInit {
   loadHotData(pidx: number, psize: number = this.pageSize) {
     if (!this.pageResponse.last) {
       this.infoService.getInfoStream(pidx, psize).subscribe(res => {
+        if (pidx === 0) {
+          this.hotEntires = new Array<InfoEntry>();
+        }
         this.pageResponse = res;
         // this.hotEntires = res.content;
         if (!res.last) {
@@ -37,6 +43,7 @@ export class CardStreamComponent implements OnInit {
       });
     } else {
       console.log('last page already, no more data');
+      this.loadProgress = false;
 
     }
 
@@ -51,6 +58,18 @@ export class CardStreamComponent implements OnInit {
       }, 1500);
 
     }
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      this.goTopBtn = true;
+    } else {
+      this.goTopBtn = false;
+    }
+  }
+
+  toTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    this.loadHotData(0);
   }
 
   formatDate(date: Date): string {

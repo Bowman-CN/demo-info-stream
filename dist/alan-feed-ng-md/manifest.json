@@ -1,11 +1,11 @@
 {
-  "name": "Envelope Your Personal Daily Feed",
-  "short_name": "ENVELOPE",
+  "name": "Paperboy: Your Private Daily Feeds",
+  "short_name": "PAPERBOY",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/hot",
-  "start_url": "/hot",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/private_feeds48x48.png",

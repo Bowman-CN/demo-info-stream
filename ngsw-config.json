@@ -1,5 +1,19 @@
 {
   "index": "/index.html",
+  "routing": {
+    "index": "/index.html",
+    "routes": {
+      "/": {
+        "prefix": false
+      },
+      "/hot": {
+        "prefix": true
+      },
+      "/prefs": {
+        "prefix": true
+      }
+    }
+  },
   "assetGroups": [
     {
       "name": "app",
@@ -12,7 +26,8 @@
           "/*.js"
         ]
       }
-    }, {
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
@@ -21,7 +36,29 @@
           "/assets/**"
         ]
       }
+    },
+    {
+      "name": "icons",
+      "installMode": "prefetch",
+      "updateMode": "lazy",
+      "resources": {
+        "files": [
+          "/assets/icons/**"
+        ]
+      }
     }
   ],
-  "url":["/hot"]
+  "dataGroups": [
+    {
+      "name": "local-api",
+      "urls": [
+        "http://127.0.0.1:8088/infos/hot?page=0&size=5"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1d",
+        "strategy": "freshness"
+      }
+    }
+  ]
 }

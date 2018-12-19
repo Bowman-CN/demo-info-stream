@@ -5,9 +5,7 @@
 export const environment = {
   production: false,
   CommonAPI: "https://localhost/apis/",
-  SW_publicKey: "BPHE2DRD5op34awPO6JDAss95zuAy4x7aa9GMqQNZ2TjzhX05xVB8gFizhsJ4ONaD4yIyo5jysDp7_Aw5kmKvO8",
-  SW_privateKey: "2lkcbFfPPTx0HroaBOueExNxjugBc_aG-TWEJo_WoIg"
-
+  SW_publicKey: "BPHE2DRD5op34awPO6JDAss95zuAy4x7aa9GMqQNZ2TjzhX05xVB8gFizhsJ4ONaD4yIyo5jysDp7_Aw5kmKvO8"
 };
 
 /*

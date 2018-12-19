@@ -1,2 +1,31 @@
-<router-outlet>
-</router-outlet>
+<div class="d-flex flex-column app-bar">
+    <div class="row topbar">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row class="head-container">
+                <button class="header-text" mat-button [matMenuTriggerFor]="menu">Paperboy V.3</button>
+                <mat-menu #menu="matMenu">
+                    <a class="menu-a" [routerLink]="['/hot']" routerLinkActive="router-link-active" mat-menu-item>Front
+                        Page</a>
+                    <a class="menu-a" [routerLink]="['/prefs']" routerLinkActive="router-link-active" mat-menu-item>Preferences</a>
+                    <!-- <button mat-menu-item></button> -->
+                </mat-menu>
+                <!-- <span>Your Feeds</span> -->
+                <!-- <section>
+                    <mat-slide-toggle style="font-size:1rem" (change)="layoutChange($event)" class="example-margin"
+                        [labelPosition]="'before'" [color]="'accent'" [checked]="false" [disabled]="false">
+                        <small>Layout: </small>
+                        {{layoutName}}
+                    </mat-slide-toggle>
+                </section> -->
+                <button mat-button color="primary" style="color:#FFF;font-size:2rem;">
+                    <fa-icon [icon]="fanews"></fa-icon>
+                </button>
+
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div class=" main-content">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
