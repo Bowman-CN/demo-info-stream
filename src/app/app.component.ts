@@ -23,15 +23,15 @@ export class AppComponent {
 
   ngOnInit() {
 
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      console.log('display-mode is standalone');
-    } else {
-      window.addEventListener('appinstalled', (evt) => {
-        // check installation status
-        console.log("appinstalled"+evt);
-        this.showInstallation = false;
-      });
-    }
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   console.log('display-mode is standalone');
+    // } else {
+    //   window.addEventListener('appinstalled', (evt) => {
+    //     // check installation status
+    //     console.log("appinstalled"+evt);
+    //     this.showInstallation = false;
+    //   });
+    // }
 
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
@@ -64,11 +64,11 @@ export class AppComponent {
       // })
 
     })
-    this.promtInstallation();
-    this.swPush.requestSubscription({
-      serverPublicKey: environment.SW_publicKey
-    }).then(sub => this.infoService.addPushSubscriber(sub).subscribe())
-      .catch(err => console.error("Could not subscribe to notifications", err));
+    // this.promtInstallation();
+    // this.swPush.requestSubscription({
+    //   serverPublicKey: environment.SW_publicKey
+    // }).then(sub => this.infoService.addPushSubscriber(sub).subscribe())
+    //   .catch(err => console.error("Could not subscribe to notifications", err));
   }
 
   promtInstallation(): void {
